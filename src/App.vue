@@ -4,23 +4,33 @@
       <contribution-calendar />
       <contribution-activity />
     </a-col>
-    <a-col :xs="{ span: 2, offset: 2 }" :lg="{ span: 4, offset: 1 }">Right side</a-col>
+    <a-col :xs="{ span: 2, offset: 2 }" :lg="{ span: 4, offset: 1 }">
+      <year-sidebar />
+    </a-col>
   </a-row>
 </template>
 
 <script>
 import ContributionCalendar from "@/components/ContributionCalendar"
 import ContributionActivity from "@/components/ContributionActivity"
+import YearSidebar from "@/components/YearSidebar"
 
 export default {
   components: {
     ContributionCalendar,
-    ContributionActivity
+    ContributionActivity,
+    YearSidebar
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
   .container {
     width: 95%;
     max-width: 930px;
