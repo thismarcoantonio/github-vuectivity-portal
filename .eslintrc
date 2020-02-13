@@ -5,6 +5,7 @@
   "parserOptions": { "parser": "babel-eslint" },
   "rules": {
     "no-console": "warn",
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "space-before-function-paren": ["error", "never"]
   }
 }
