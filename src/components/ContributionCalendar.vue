@@ -51,11 +51,9 @@ export default {
 .grid__container {
   display: grid;
   grid-gap: 3px;
-  padding-left: 0;
-  grid-template-columns: repeat(53, 1fr);
-  list-style: none;
   grid-auto-flow: column;
   grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(53, 1fr);
 }
 
 .grid__item {

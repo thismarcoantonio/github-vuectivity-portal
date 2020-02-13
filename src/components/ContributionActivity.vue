@@ -55,9 +55,6 @@ export default {
 
 .activity__list {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   position: relative;
 
   &:before {
