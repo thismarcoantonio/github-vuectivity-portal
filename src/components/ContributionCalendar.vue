@@ -16,13 +16,13 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       dates: this.getDateArray()
     }
   },
   methods: {
-    getDateArray () {
+    getDateArray() {
       const totalWeeksPerYear = 52
       const totalDaysPerWeek = 7
       const currentDate = new Date()
@@ -34,7 +34,7 @@ export default {
         return new Date(actualDate)
       }).reverse()
     },
-    formatDate (date) {
+    formatDate(date) {
       const receivedDate = new Date(date)
       const shortMonth = Intl.DateTimeFormat("default", { month: "short" }).format(receivedDate)
       return `${shortMonth} ${receivedDate.getDate()}, ${receivedDate.getFullYear()}`
