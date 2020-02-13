@@ -2,6 +2,7 @@
   <a-row class="container">
     <a-col :xs="{ span: 20 }" :lg="{ span: 19 }">
       <contribution-calendar />
+      <contribution-activity />
     </a-col>
     <a-col :xs="{ span: 2, offset: 2 }" :lg="{ span: 4, offset: 1 }">Right side</a-col>
   </a-row>
@@ -9,10 +10,12 @@
 
 <script>
 import ContributionCalendar from "@/components/ContributionCalendar"
+import ContributionActivity from "@/components/ContributionActivity"
 
 export default {
   components: {
-    ContributionCalendar
+    ContributionCalendar,
+    ContributionActivity
   }
 }
 </script>
