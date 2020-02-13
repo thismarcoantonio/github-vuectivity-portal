@@ -54,6 +54,7 @@ export default {
 }
 
 .activity__list {
+  margin: 0;
   width: 100%;
   position: relative;
 
@@ -128,7 +129,7 @@ export default {
 
 .activity__action-button {
   width: 100%;
-  color: blue;
+  color: #0366d6;
   border-width: 2px;
   padding: 8px 0;
   height: auto;

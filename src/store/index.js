@@ -1,15 +1,13 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import Timeline from "./Timeline"
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+const store = new Vuex.Store({
   modules: {
+    Timeline
   }
 })
+
+export default store

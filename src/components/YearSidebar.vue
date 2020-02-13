@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="years">
-      <li v-for="year in years" :key="year">
+      <li v-for="year in validYears" :key="year">
         <a-button :class="['button', year === 2020 && 'button--active']">{{ year }}</a-button>
       </li>
     </ul>
@@ -9,19 +9,11 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      years: this.getValidYears(new Date(2012, 1), new Date())
-    }
-  },
-  methods: {
-    getValidYears(initialDate) {
-      const initialYear = new Date(initialDate).getFullYear() - 1
-      const currentYear = new Date().getFullYear()
+import { mapGetters } from "vuex"
 
-      return Array.from(new Array(currentYear - initialYear), (_, i) => currentYear - i)
-    }
+export default {
+  computed: {
+    ...mapGetters("Timeline", ["validYears"])
   }
 }
 </script>

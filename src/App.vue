@@ -13,15 +13,22 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
+import YearSidebar from "@/components/YearSidebar"
 import ContributionCalendar from "@/components/ContributionCalendar"
 import ContributionActivity from "@/components/ContributionActivity"
-import YearSidebar from "@/components/YearSidebar"
 
 export default {
+  mounted() {
+    this.setTimelineInfo()
+  },
   components: {
     ContributionCalendar,
     ContributionActivity,
     YearSidebar
+  },
+  methods: {
+    ...mapActions("Timeline", ["setTimelineInfo"])
   }
 }
 </script>
