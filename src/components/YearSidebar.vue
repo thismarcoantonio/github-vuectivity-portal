@@ -2,17 +2,26 @@
   <div>
     <ul class="years">
       <li v-for="year in validYears" :key="year">
-        <a-button :class="['button', year === 2020 && 'button--active']">{{ year }}</a-button>
+        <a-button
+          :class="['button', year === activeYear && 'button--active']"
+          @click="setActiveYear(year)"
+        >
+          {{ year }}
+        </a-button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters, mapState, mapActions } from "vuex"
 
 export default {
+  methods: {
+    ...mapActions("Timeline", ["setActiveYear"])
+  },
   computed: {
+    ...mapState("Timeline", ["activeYear"]),
     ...mapGetters("Timeline", ["validYears"])
   }
 }
@@ -36,5 +45,10 @@ export default {
 .button--active {
   color: white;
   background-color: #0366d6;
+
+  &:hover, &:focus {
+    color: white;
+    background-color: #0366d6;
+  }
 }
 </style>
