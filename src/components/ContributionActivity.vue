@@ -9,7 +9,9 @@
           </span>
         </div>
         <div :class="['activity__list-item', index === items.length - 1 && 'activity__list-item--last']">
-          <div class="activity__list-icon"></div>
+          <div class="activity__list-icon">
+            <Icon icon="eye" />
+          </div>
           <div v-if="item.repositories">
             Created 35 commits in {{ item.repositories.length }} {{ item.repositories.length > 1 ? "repositories" : "repository" }}
           </div>
@@ -22,6 +24,8 @@
 </template>
 
 <script>
+import Icon from "vue-themify-icons"
+
 export default {
   data() {
     return {
@@ -44,6 +48,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    Icon
   }
 }
 </script>
@@ -83,11 +90,16 @@ export default {
 }
 
 .activity__list-icon {
+  display: flex;
   left: -1.6rem;
   width: 3.2rem;
   height: 3.2rem;
+  font-size: 1.8rem;
   border-radius: 50%;
   position: absolute;
+  color: $color-black;
+  align-items: center;
+  justify-content: center;
   outline: 2px solid $color-white;
   background-color: $color-grey-light;
 }
