@@ -30,7 +30,7 @@
 
 <script>
 import Icon from "vue-themify-icons"
-import { formatShortMonth } from "@/utils/format"
+import { formatMonth } from "@/utils/format"
 
 export default {
   data() {
@@ -92,7 +92,7 @@ export default {
   },
   computed: {
     monthName() {
-      return formatShortMonth(this.createdAt)
+      return formatMonth(this.createdAt)
     }
   }
 }
