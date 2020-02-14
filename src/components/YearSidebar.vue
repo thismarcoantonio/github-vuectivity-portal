@@ -35,20 +35,15 @@ export default {
 .button {
   border: 0;
   width: 100%;
-  font-size: 12px;
   text-align: left;
-  margin-bottom: 8px;
-  padding: 8px 16px;
   box-shadow: unset;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem 1.6rem;
 }
 
-.button--active {
-  color: white;
-  background-color: #0366d6;
-
-  &:hover, &:focus {
-    color: white;
-    background-color: #0366d6;
-  }
+.button--active, .button--active:hover, .button--active:focus {
+  color: $color-white;
+  background-color: $color-blue-primary;
 }
 </style>

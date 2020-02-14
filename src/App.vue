@@ -34,15 +34,9 @@ export default {
 </script>
 
 <style lang="scss">
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
   .main-column {
     width: 95%;
-    max-width: 930px;
-    margin: 100px auto;
+    max-width: 93rem;
+    margin: 10rem auto;
   }
 </style>

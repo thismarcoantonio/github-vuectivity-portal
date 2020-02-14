@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  margin-top: 24px;
+  margin-top: 2.4rem;
 }
 
 .activity__list {
@@ -60,22 +60,22 @@ export default {
 
   &:before {
     content: "";
-    width: 2px;
     height: 100%;
-    margin-left: 16px;
+    width: 0.2rem;
     position: absolute;
-    background-color: lightgrey;
+    margin-left: 1.6rem;
+    background-color: $color-grey-light;
   }
 }
 
 .activity__list-item {
   display: flex;
-  margin-left: 16px;
   position: relative;
   align-items: center;
-  padding: 32px 0 32px 24px;
+  margin-left: 1.6rem;
   justify-content: space-between;
-  border-bottom: 2px solid lightgrey;
+  padding: 3.2rem 0 3.2rem 2.4rem;
+  border-bottom: 2px solid $color-grey-light;
 }
 
 .activity__list-item--last {
@@ -83,24 +83,25 @@ export default {
 }
 
 .activity__list-icon {
-  width: 32px;
-  height: 32px;
+  left: -1.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   position: absolute;
-  left: -16px;
-  background-color: lightgrey;
-  outline: 2px solid white;
+  outline: 2px solid $color-white;
+  background-color: $color-grey-light;
 }
 
 .activity__list-collapse {
   cursor: pointer;
-  width: 15px;
-  height: 20px;
-  background-color: lightgrey;
+  height: 2rem;
+  width: 1.5rem;
+  background-color: $color-grey-light;
 }
 
 .activity__title {
   display: flex;
+  font-size: 1.2rem;
   position: relative;
   align-items: center;
 
@@ -110,29 +111,36 @@ export default {
     height: 1px;
     display: block;
     position: absolute;
-    background-color: lightgrey;
+    background-color: $color-grey-light;
   }
 }
 
 .activity__title-text {
   z-index: 1;
   position: relative;
-  padding-right: 5px;
-  background-color: white;
-  font-weight: bold;
-  color: #3E3E3E;
+  background-color: $color-white;
+  font-weight: $font-weight-bold;
+  padding: 0.8rem 0.5rem 0.8rem 0;
 }
 
 .activity__title-text--light {
-  color: #777777;
+  color: $color-grey-normal;
 }
 
 .activity__action-button {
   width: 100%;
-  color: #0366d6;
-  border-width: 2px;
-  padding: 8px 0;
   height: auto;
-  font-weight: bold;
+  padding: 0.8rem 0;
+  font-size: 1.2rem;
+  border-width: 0.1rem;
+  color: $color-blue-primary;
+  border-color: $color-grey-light;
+  font-weight: $font-weight-semibold;
+
+  &:hover, &:focus {
+    color: $color-blue-primary;
+    border-color: $color-grey-light;
+    background-color: $color-blue-light;
+  }
 }
 </style>
