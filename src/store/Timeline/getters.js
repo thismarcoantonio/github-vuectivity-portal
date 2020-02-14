@@ -17,6 +17,7 @@ function normalizeEvent(currentEvents = {}, event) {
     ...currentEvents,
     [selectedType]: {
       quantity: (currentEvent.quantity || 0) + 1,
+      createdAt: new Date(event.created_at),
       repositories: [
         ...(currentEvent.repositories || []),
         ...(!currentEvent.repositories?.includes(event.repository_url) ? [event.repository_url] : [])
