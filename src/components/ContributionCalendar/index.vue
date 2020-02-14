@@ -48,9 +48,9 @@ export default {
       const maxTile = Math.max(...mappedTiles)
       const activityIntensity = maxTile - minTile
 
-      const intensity = Array.from(new Array(5), (_, i) => (activityIntensity / 5) * i)
+      const intensity = Array.from(new Array(4), (_, i) => (activityIntensity / 4) * i)
         .reverse()
-        .findIndex(intensity => tile.quantity >= intensity)
+        .findIndex(intensity => tile.quantity > intensity) + 1
 
       return intensity || null
     },

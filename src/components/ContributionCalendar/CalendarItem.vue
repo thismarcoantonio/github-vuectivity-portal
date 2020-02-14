@@ -1,5 +1,5 @@
 <template>
-  <li :class="['grid__item', `grid__item--color-${colorIntensity || 4}`]" />
+  <li :class="['grid__item', `grid__item--color-${colorIntensity > 0 ? colorIntensity : 'default'}`]" />
 </template>
 
 <script>
@@ -19,22 +19,22 @@ export default {
 }
 
 .grid__item--color-4 {
-  background-color: $color-calendar-0;
-}
-
-.grid__item--color-3 {
   background-color: $color-calendar-1;
 }
 
-.grid__item--color-2 {
+.grid__item--color-3 {
   background-color: $color-calendar-2;
 }
 
-.grid__item--color-1 {
+.grid__item--color-2 {
   background-color: $color-calendar-3;
 }
 
-.grid__item--color-0 {
+.grid__item--color-1 {
   background-color: $color-calendar-4;
+}
+
+.grid__item--color-default {
+  background-color: $color-calendar-0;
 }
 </style>

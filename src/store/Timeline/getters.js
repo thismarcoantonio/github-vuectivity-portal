@@ -55,20 +55,28 @@ export default {
   yearTiles({ activeYear, timeline }) {
     const totalWeeksPerYear = 52
     const totalDaysPerWeek = 7
+
     const currentDate = new Date()
-    const currentDay = currentDate.getDay() + 1
+
+    const activeDate = activeYear === currentDate.getFullYear()
+      ? currentDate
+      : new Date(activeYear, 11, 31)
+    const currentDay = activeDate.getDay() + 1
     const totalTiles = totalWeeksPerYear * totalDaysPerWeek + currentDay
 
     return Array.from(Array(totalTiles), (_, i) => {
-      const actualDate = new Date(activeYear, 11).setDate(currentDate.getDate() - i)
+      const actualDate = activeYear === currentDate.getFullYear()
+        ? new Date()
+        : new Date(activeYear, 11)
+      const calculatedDate = actualDate.setDate(activeDate.getDate() - i)
       const actualTiles = timeline.filter(tile => {
         const [tileYear, tileMonth, tileDay] = tile.created_at.split(" ")[0].split("-")
         const tileDate = new Date(tileYear, tileMonth, tileDay, 0).getTime()
-        return tileDate === actualDate
+        return tileDate === calculatedDate
       })
 
       return {
-        date: new Date(actualDate),
+        date: new Date(calculatedDate),
         quantity: actualTiles.length
       }
     }).reverse()
